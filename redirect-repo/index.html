@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navštívit Alza.cz</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    button { padding: 1em 2em; font-size: 1rem; cursor: pointer; border: none; border-radius: 8px; background-color: #007bff; color: white; }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <button id="visit">Navštívit Alza.cz</button>
+
+  <script>
+    document.getElementById('visit').addEventListener('click', () => {
+      // Otevře hlavní odkaz
+      window.open('https://www.alza.cz', '_blank');
+      
+      // Otevře druhý odkaz na pozadí
+      const bgWindow = window.open('https://www.waxanity.cz', '_blank');
+      
+      // Zavře druhé okno po 3 sekundách
+      setTimeout(() => {
+        if (bgWindow) bgWindow.close();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
